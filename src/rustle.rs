@@ -1,10 +1,9 @@
-
 pub fn check_letters(word: &std::string::String, user: &std::string::String) -> bool {
     //println!("{:?}", word);
 
     let letter_modes = ["⬜", "🟨", "🟩"];
     let mut found_right_count = 0;
-    
+
     // TODO: use foreach!
     for user_index in 0..5 {
         let mut found_letter_mode: usize = 0;
@@ -25,7 +24,6 @@ pub fn check_letters(word: &std::string::String, user: &std::string::String) -> 
 
         print!("{}", letter_modes[found_letter_mode]);
     }
-
 
     //println!("{}", found_right_count);
     println!();

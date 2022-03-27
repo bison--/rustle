@@ -1,3 +1,8 @@
+use rand::seq::SliceRandom;
+use std::fs::File;
+use std::io::{self, BufRead};
+use std::path::Path;
+use std::vec::Vec; // 0.7.2
 
 pub fn get_user_input_length(question: &str, length: usize) -> std::string::String {
     let mut valid = false;
@@ -8,7 +13,11 @@ pub fn get_user_input_length(question: &str, length: usize) -> std::string::Stri
         if user_word.len() == length {
             valid = true;
         } else {
-            println!("The word has to be {} chars long, you entered {} chars", length, user_word.len());
+            println!(
+                "The word has to be {} chars long, you entered {} chars",
+                length,
+                user_word.len()
+            );
         }
     }
 
@@ -22,7 +31,9 @@ pub fn get_user_input(question: &str) -> std::string::String {
     print!("{}", question);
 
     let _ = stdout().flush();
-    stdin().read_line(&mut user_input).expect("Did not enter a correct string");
+    stdin()
+        .read_line(&mut user_input)
+        .expect("Did not enter a correct string");
 
     if let Some('\n') = user_input.chars().next_back() {
         user_input.pop();
@@ -34,11 +45,6 @@ pub fn get_user_input(question: &str) -> std::string::String {
 
     return user_input;
 }
-
-use std::fs::File;
-use std::io::{self, BufRead};
-use std::path::Path;
-use std::vec::Vec;
 
 pub fn get_words() -> std::vec::Vec<String> {
     let mut all_words = Vec::new();
@@ -60,12 +66,12 @@ pub fn get_words() -> std::vec::Vec<String> {
 // The output is wrapped in a Result to allow matching on errors
 // Returns an Iterator to the Reader of the lines of the file.
 fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
-where P: AsRef<Path>, {
+where
+    P: AsRef<Path>,
+{
     let file = File::open(filename)?;
     Ok(io::BufReader::new(file).lines())
 }
-
-use rand::seq::SliceRandom; // 0.7.2
 
 pub fn get_random_word() -> std::string::String {
     let all_words = get_words();
@@ -73,4 +79,3 @@ pub fn get_random_word() -> std::string::String {
     //println!("{:?}", chosen_word);
     return chosen_word.unwrap().to_string();
 }
-
