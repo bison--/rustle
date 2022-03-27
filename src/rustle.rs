@@ -28,6 +28,6 @@ pub fn check_letters(word: &std::string::String, user: &std::string::String) -> 
 
 
     //println!("{}", found_right_count);
-    println!("");
+    println!();
     return found_right_count == 5;
 }

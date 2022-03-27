@@ -2,12 +2,13 @@
 pub fn get_user_input_length(question: &str, length: usize) -> std::string::String {
     let mut valid = false;
     let mut user_word: std::string::String = String::new();
+
     while !valid {
         user_word = get_user_input(question);
         if user_word.len() == length {
             valid = true;
         } else {
-            println!("The word has ro bee {} chars long, you entered {}", length, user_word.len());
+            println!("The word has to be {} chars long, you entered {} chars", length, user_word.len());
         }
     }
 
