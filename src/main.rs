@@ -2,19 +2,23 @@ mod helper;
 mod rustle;
 
 fn main() {
-    println!("
+    println!(
+        "
     **********
     * RUSTLE *
-    **********");
+    **********"
+    );
 
-    println!("
+    println!(
+        "
     A simple WORDLE clone in Rust.
     You have to guess the WORD in six goes or less.
     A correct letter turns green 🟩.
     A correct letter in the wrong place turns yellow 🟨.
     An incorrect letter turns gray ⬜.
     Letters can be used more than once.
-    ");
+    "
+    );
 
     let random_word = helper::get_random_word();
     //println!("{}", &random_word);
@@ -33,6 +37,6 @@ fn main() {
     } else {
         println!("YOU LOST! 😞 The word was: '{}'", random_word);
     }
-    
+
     //println!("{}", user_word);
 }
