@@ -1,6 +1,6 @@
 
 pub fn check_letters(word: &std::string::String, user: &std::string::String) -> bool {
-    println!("{:?}", word);
+    //println!("{:?}", word);
 
     let letter_modes = ["⬜", "🟨", "🟩"];
     let mut found_right_count = 0;
