@@ -10,9 +10,9 @@ fn main() {
     println!("
     A simple WORDLE clone in Rust.
     You have to guess the WORD in six goes or less.
-    A correct letter turns green.
-    A correct letter in the wrong place turns yellow.
-    An incorrect letter turns gray.
+    A correct letter turns green 🟩.
+    A correct letter in the wrong place turns yellow 🟨.
+    An incorrect letter turns gray ⬜.
     Letters can be used more than once.
     ");
 
