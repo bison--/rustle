@@ -8,7 +8,7 @@ fn main() {
     **********");
 
     println!("
-    A simple WORDL clone in Rust.
+    A simple WORDLE clone in Rust.
     You have to guess the WORD in six goes or less.
     A correct letter turns green.
     A correct letter in the wrong place turns yellow.
