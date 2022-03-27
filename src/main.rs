@@ -17,6 +17,8 @@ fn main() {
     Letters can be used more than once."
     );
 
+    println!();
+
     let random_word = helper::get_random_word();
     //println!("{}", &random_word);
 
